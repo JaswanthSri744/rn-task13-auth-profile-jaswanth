@@ -1,56 +1,123 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# Task 13 - Authentication & User Profile Management App
 
-## Get started
+## Project Overview
 
-1. Install dependencies
+A React Native mobile application built using Expo and TypeScript.
 
-   ```bash
-   npm install
-   ```
+The application implements user authentication, profile management,
+protected navigation and local session persistence using DummyJSON API.
 
-2. Start the app
+## Features
 
-   ```bash
-   npx expo start
-   ```
+- User login with username and password
+- Form validation
+- DummyJSON authentication API integration
+- User dashboard
+- Display logged-in user information
+- Separate profile screen
+- Edit profile information
+- Profile form validation
+- Context API authentication management
+- AsyncStorage session persistence
+- Protected navigation
+- Logout functionality
+- Access token and refresh token management
+- Loading and API error handling
+- Reusable UI components
 
-In the output, you'll find options to open the app in a
+## Technologies Used
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- React Native
+- Expo
+- TypeScript
+- React Navigation
+- Context API
+- AsyncStorage
+- Fetch API
 
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## API Details
 
-## Get a fresh project
+Base URL:
 
-When you're ready, run:
+https://dummyjson.com
 
-```bash
-npm run reset-project
-```
+### Authentication
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+POST /auth/login
 
-### Other setup steps
+GET /auth/me
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+POST /auth/refresh
 
-## Learn more
+### Profile
 
-To learn more about developing your project with Expo, look at the following resources:
+PATCH /users/{id}
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Demo Credentials
 
-## Join the community
+Username: emilys
 
-Join our community of developers creating universal apps.
+Password: emilyspass
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Project Setup
+
+Clone the repository:
+
+git clone YOUR_GITHUB_REPOSITORY_URL
+
+Navigate into the project:
+
+cd Task13AuthApp
+
+Install dependencies:
+
+npm install
+
+Start Expo:
+
+npx expo start
+
+Scan the QR code using Expo Go or run on an Android emulator.
+
+## Project Structure
+
+src/components - Reusable UI components
+
+src/screens - Application screens
+
+src/navigation - Navigation and protected routes
+
+src/context - Authentication state management
+
+src/services - API integration
+
+src/storage - AsyncStorage functionality
+
+src/types - TypeScript interfaces
+
+src/utils - Validation functions
+
+src/constants - Common application values
+
+## Authentication Flow
+
+1. User enters login credentials.
+2. Credentials are validated.
+3. Login API is called.
+4. Authentication tokens and user information are stored locally.
+5. AuthContext updates the authentication state.
+6. Protected navigation displays the dashboard.
+7. Session is restored when the app is reopened.
+8. User can view and edit profile information.
+9. Logout clears locally stored authentication data.
+
+## Note
+
+DummyJSON is a mock API. Profile update operations simulate
+server updates and do not permanently modify the database.
+Local profile changes are persisted using AsyncStorage.
+
+## Author
+
+Jaswanth
